@@ -12,18 +12,19 @@ public class GatewayCorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        
+
         // Specify allowed origins
         config.addAllowedOrigin("http://localhost:5173"); // Replace with your frontend URL
-        config.addAllowedOrigin("https://your-production-domain.com"); // Add production URL
-        
+        // config.addAllowedOrigin("https://your-production-domain.com"); // Add
+        // production URL
+
         // Specify allowed methods
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
         config.addAllowedMethod("OPTIONS");
-        
+
         // Specify allowed headers
         config.addAllowedHeader("*"); // Allow all headers
 
@@ -37,4 +38,3 @@ public class GatewayCorsConfig {
         return new CorsWebFilter(source);
     }
 }
-
