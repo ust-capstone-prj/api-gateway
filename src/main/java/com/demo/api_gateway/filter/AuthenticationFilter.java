@@ -39,7 +39,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
 					// RestClient
 					// can keep this call in a seperate JwtUtil class and call
 					RestClient restClient = RestClient.create();
-					restClient.get().uri("http://auth-cntr:8090/api/auth/validate/token?token=" + authHeaderToken)
+					restClient.get().uri("http://localhost:1212/api/auth/validate/token?token=" + authHeaderToken)
 							.retrieve().body(Boolean.class);
 					// also instead of making a RestClient call for every request, we can validate
 					// the token here in api-gateway itself
